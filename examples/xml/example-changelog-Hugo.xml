@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xmlns:pro="http://www.liquibase.org/xml/ns/pro"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd
+    http://www.liquibase.org/xml/ns/pro http://www.liquibase.org/xml/ns/pro/liquibase-pro-latest.xsd ">
+
+      <changeSet id="1" author="Hugo" labels="example-label" context="example-context">
+          <comment>example-comment</comment>
+        <createTable tableName="computer">
+            <column name="idComputer" type="int" autoIncrement="true">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="brand" type="varchar(20)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="serialNumber" type="varchar(20)">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+
+    <changeSet id="2" author="Hugo" labels="example-label" context="example-context">
+        <comment>example-comment</comment>
+        <createTable tableName="serviceOrder">
+            <column name="idServiceOrder" type="int" autoIncrement="true">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="countComputer" type="int(10)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="maxComputer" type="int(10)">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+
+    <changeSet id="3" author="Hugo" labels="example-label" context="example-context">
+        <comment>example-comment</comment>
+        <createTable tableName="monitor">
+            <column name="idMonitor" type="int" autoIncrement="true">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="brand" type="varchar(20)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="model" type="varchar(20)">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+
+    <changeSet id="4" author="Andres" labels="example-label" context="example-context">
+        <comment>example-comment</comment>
+        <addColumn tableName="monitor">
+            <column name="serialNumber" type="varchar(20)"/>
+        </addColumn>
+    </changeSet>
+</databaseChangeLog>
